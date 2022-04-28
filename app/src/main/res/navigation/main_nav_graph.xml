@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.beko.universityfinderapp.ui.main.homepage.Homepage"
+        android:label="Homepage" >
+        <action
+            android:id="@+id/action_homepage_to_detailPage"
+            app:destination="@id/detailPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.beko.universityfinderapp.ui.main.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailPage"
+        android:name="com.beko.universityfinderapp.ui.main.detailpage.DetailPage"
+        android:label="fragment_detail_page"
+        tools:layout="@layout/fragment_detail_page" >
+        <argument
+            android:name="Model"
+            app:argType="com.beko.universityfinderapp.model.University" />
+    </fragment>
+</navigation>
